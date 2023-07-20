@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --paragreph-color: blue;
+    --text-color: #02007a;
+    --text-main-color: #0000ff;
+    --First-bg: #536DFE;
+    --secnond-bg: #82B1FF;
+    --therd-bg: #eee;
+    --weigth-bold: bold;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navgation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+}
+
+.navgation .brandName {
+    font-size: 30px;
+    color: #eee;
+    color: var(--text-main-color);
+}
+
+ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navgation a {
+    text-transform: capitalize;
+    font-weight: var(--weigth-bold);
+    color: #eee;
+    transition: 0.3s;
+}
+
+.navgation a:hover {
+    color: var(--paragreph-color);
+}
+
+.navgation .active {
+    color: var(--text-main-color);
+}
+
+.landing {
+    height: calc(100vh);
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.500)), url(../image/4.jpg);
+    z-index: 0;
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.landing h1 {
+    margin-bottom: 2rem;
+    font-size: 33px;
+    color: white;
+}
+
+.landing h1 span {
+    color: var(--text-main-color);
+}
+
+.landing p {
+    margin: auto;
+    line-height: 1.6;
+    color: #eee;
+    text-transform: capitalize;
+}
+
+
+/* end landing page */
+
+
+/* stert Editing setting */
+
+.settingBox {
+    height: calc(100vh - 100px);
+    background: #eee;
+    width: 200px;
+    position: absolute;
+    z-index: 999;
+    transition: 0.3s;
+    left: -200px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.open {
+    left: 0;
+}
+
+.settingBox h3 {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 0.7rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.settingBox .fa-gear {
+    position: absolute;
+    right: -36px;
+    bottom: 20px;
+    color: white;
+    background-color: var(--text-main-color);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.changeColor {
+    margin: 20px 10px;
+    text-align: center;
+    background: #ffffff;
+    padding: 1rem 1.8rem;
+    border-radius: 5px;
+}
+
+.changeColor p {
+    font-size: 25px;
+    color: var(--text-main-color);
+    font-weight: var(--weigth-bold);
+    margin-bottom: 5px;
+}
+
+.changeColor .color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.changeColor .red {
+    background: #ff0000;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.changeColor .blue {
+    background: #0000ff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.changeColor .green {
+    background: #008000;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.changeColor .orange {
+    background: #ffa500;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.changeColor .active {
+    opacity: 1;
+    border: 3px solid #bababa;
+}
+
+.settingBox .cangeBg {
+    margin: 20px 10px;
+    background: #ffffff;
+    padding: 1rem 1.8rem;
+    border-radius: 5px;
+}
+
+.settingBox .cangeBg p {
+    color: var(--text-main-color);
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.settingBox .cangeBg .select {
+    display: flex;
+    justify-content: space-around;
+}
+
+.settingBox .cangeBg .select .yes,
+.settingBox .cangeBg .select .no {
+    background-color: orange;
+    padding: 5px 12px;
+    opacity: 0.5;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.settingBox .cangeBg .select .active {
+    opacity: 1;
+}
+
+
+/* end Editing setting */
