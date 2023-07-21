@@ -14,6 +14,10 @@
     --weigth-bold: bold;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Cairo', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -27,6 +31,32 @@ li {
 
 a {
     text-decoration: none;
+}
+
+.container {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+div .main-heading {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    color: var(--text-main-color);
+    margin-bottom: 50px;
+}
+
+.main-heading::after {
+    content: '';
+    width: 150px;
+    position: absolute;
+    background: var(--text-main-color);
+    height: 1px;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .navgation {
@@ -69,7 +99,7 @@ ul {
     z-index: 0;
 }
 
-.content {
+.landing .content {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -101,22 +131,22 @@ ul {
 
 /* stert Editing setting */
 
-.settingBox {
+.landing .settingBox {
     height: calc(100vh - 100px);
     background: var(--text-main-color);
     width: 200px;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     transition: 0.3s;
     left: -200px;
     border-radius: 0px 5px 5px 0px;
 }
 
-.open {
+.landing .open {
     left: 0;
 }
 
-.settingBox h3 {
+.landing .settingBox h3 {
     text-align: center;
     color: var(--text-color);
     margin-top: 0.7rem;
@@ -124,7 +154,7 @@ ul {
     margin-bottom: 20px;
 }
 
-.settingBox .fa-gear {
+.landing .settingBox .fa-gear {
     position: absolute;
     right: -36px;
     bottom: 20px;
@@ -135,7 +165,7 @@ ul {
     border-radius: 0px 5px 5px 0px;
 }
 
-.changeColor {
+.landing .changeColor {
     margin: 20px 10px;
     text-align: center;
     background: #ffffff;
@@ -143,21 +173,21 @@ ul {
     border-radius: 5px;
 }
 
-.changeColor p {
+.landing .changeColor p {
     font-size: 25px;
     color: var(--text-main-color);
     font-weight: var(--weigth-bold);
     margin-bottom: 5px;
 }
 
-.changeColor .color {
+.landing .changeColor .color {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.changeColor .red {
+.landing .changeColor .red {
     background: #ff0000;
     padding: 10px;
     border-radius: 50%;
@@ -165,7 +195,7 @@ ul {
     opacity: 0.5;
 }
 
-.changeColor .blue {
+.landing .changeColor .blue {
     background: #0000ff;
     padding: 10px;
     border-radius: 50%;
@@ -173,7 +203,7 @@ ul {
     opacity: 0.5;
 }
 
-.changeColor .green {
+.landing .changeColor .green {
     background: #008000;
     padding: 10px;
     border-radius: 50%;
@@ -181,7 +211,7 @@ ul {
     opacity: 0.5;
 }
 
-.changeColor .orange {
+.landing .changeColor .orange {
     background: #ffa500;
     padding: 10px;
     border-radius: 50%;
@@ -189,32 +219,32 @@ ul {
     opacity: 0.5;
 }
 
-.changeColor .active {
+.landing .changeColor .active {
     opacity: 1;
     border: 3px solid #bababa;
 }
 
-.settingBox .cangeBg {
+.landing .settingBox .cangeBg {
     margin: 20px 10px;
     background: #ffffff;
     padding: 1rem 1.8rem;
     border-radius: 5px;
 }
 
-.settingBox .cangeBg p {
+.landing .settingBox .cangeBg p {
     color: var(--text-main-color);
     font-weight: bold;
     font-size: 12px;
     margin-bottom: 6px;
 }
 
-.settingBox .cangeBg .select {
+.landing .settingBox .cangeBg .select {
     display: flex;
     justify-content: space-around;
 }
 
-.settingBox .cangeBg .select .yes,
-.settingBox .cangeBg .select .no {
+.landing .settingBox .cangeBg .select .yes,
+.landing .settingBox .cangeBg .select .no {
     background-color: orange;
     padding: 5px 12px;
     opacity: 0.5;
@@ -222,9 +252,89 @@ ul {
     border-radius: 5px;
 }
 
-.settingBox .cangeBg .select .active {
+.landing .settingBox .cangeBg .select .active {
     opacity: 1;
 }
 
 
 /* end Editing setting */
+
+
+/* start AboutUs */
+
+.AboutUs {
+    margin: 0 30px;
+    margin-top: 50px;
+}
+
+.AboutUs .content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.AboutUs .text-content {
+    flex: 1;
+    margin: 20px;
+}
+
+.AboutUs .text-content h1 {
+    color: var(--text-main-color);
+    margin-bottom: 20px;
+    font-size: 38px;
+}
+
+.AboutUs .text-content p {
+    line-height: 1.6;
+}
+
+.AboutUs .content .image {
+    flex: 1;
+    text-align: center;
+}
+
+.AboutUs .content .image img {
+    width: 20rem;
+}
+
+.skills {
+    background-color: #eee;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.allBoxesSkills {
+    padding: 20px;
+}
+
+.allBoxesSkills .box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.allBoxesSkills .box .nameSkills {
+    text-align: center;
+    width: 150px;
+    font-weight: var(--weigth-bold);
+    color: var(--text-main-color);
+}
+
+.allBoxesSkills .box .prog {
+    height: 20px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.allBoxesSkills .box .prog span {
+    position: absolute;
+    content: '';
+    height: 100%;
+    background-color: var(--text-main-color);
+    border-radius: 4px;
+    transition: all 0.4s;
+}

@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600;700;800;900;1000&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
-    <title>Document</title>
     <!-- font icon -->
     <link rel="stylesheet" href="./style/all.min.css">
     <!-- main style sheet -->
     <link rel="stylesheet" href="./style/main.css">
+    <title>special site</title>
 </head>
 
 <body>
@@ -21,14 +21,13 @@
             <nav>
                 <ul>
                     <li><a class="active" href="#">home</a></li>
-                    <li><a href="#">about us</a></li>
-                    <li><a href="#">services</a></li>
+                    <li><a href="#AboutUs">about us</a></li>
+                    <li><a href="#">our skills</a></li>
                     <li><a href="#">product</a></li>
                     <li><a href="#">contact</a></li>
                 </ul>
             </nav>
         </div>
-
         <div class="content">
             <h1>we are <span>creative</span> agency</h1>
             <p>Establishing in-house creative teams can be costly since it entails recruiting and training new staff. In contrast, the outsourced professional services can be accessed immediately</p>
@@ -58,10 +57,66 @@
             </section>
         </section>
     </section>
-    <!-- font Icon -->
+    <section class="AboutUs" id="AboutUs">
+        <div class="content">`
+            <div class="text-content">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil totam perspiciatis recusandae aperiam quae soluta voluptatibus sit, quam sint maxime rem iste obcaecati perferendis, neque earum. Expedita, amet. Animi, quam.</p>
+            </div>
+            <div class="image">
+                <img src="./image/AboutUs.png">
+            </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <div class="">
+            <h2 class="main-heading">our skillss</h2>
+        </div>
+        <div class="container">
+            <div class="allBoxesSkills">
+                <div class="box">
+                    <div class="nameSkills"> html: 5 </div>
+                    <div class="prog">
+                        <span data-prog="80%"></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="nameSkills"> css: 3 </div>
+                    <div class="prog">
+                        <span data-prog="75%"></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="nameSkills"> bootStrap </div>
+                    <div class="prog">
+                        <span data-prog="90%"></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="nameSkills"> jsvaScript </div>
+                    <div class="prog">
+                        <span data-prog="50%"></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="nameSkills"> command line </div>
+                    <div class="prog">
+                        <span data-prog="10%"></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="nameSkills"> gitHup </div>
+                    <div class="prog">
+                        <span data-prog="100%"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./js/all.min.js"></script>
-    <!-- master js file -->
     <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/ScrollReveal.js"></script>
 </body>
 
 </html>

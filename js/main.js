@@ -36,6 +36,7 @@ if (myColors !== null) {
         }
     })
 }
+
 // add ANd remove class Active from changer random Background
 let backGroundChanger = document.querySelectorAll(".select span");
 backGroundChanger.forEach(span => {
@@ -99,4 +100,27 @@ function randomImages() {
         }, 1000);
     };
 };
-randomImages()
+randomImages();
+
+
+// get Skills
+let mySkills = document.querySelector(".skills");
+// start imnemation (on scroll We Well make function)
+window.onscroll = function() {
+    // skills offsetTop
+    let skillsOffsettop = mySkills.offsetTop
+
+    // offsetHeight make to calculate MyELement + encluding (margin, padding, border)
+    let skillsOuterHeight = mySkills.offsetHeight
+    let windowHeight = window.innerHeight // get height The displayed page
+    let windowScrolltop = window.scrollY // window scroll top (size page for scrolling)
+    console.log(skillsOuterHeight) // test
+        // make condition to show span progress
+    if (windowScrolltop > (skillsOffsettop + skillsOuterHeight - windowHeight)) {
+        this.console.log(`my all skills`) // if you go to the skills section show this message
+        let myAllSkills = document.querySelectorAll(".skills .allBoxesSkills .box span");
+        myAllSkills.forEach(skills => {
+            skills.style.width = skills.dataset.prog;
+        });
+    };
+}
