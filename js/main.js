@@ -114,7 +114,7 @@ window.onscroll = function() {
     let skillsOuterHeight = mySkills.offsetHeight
     let windowHeight = window.innerHeight // get height The displayed page
     let windowScrolltop = window.scrollY // window scroll top (size page for scrolling)
-    console.log(skillsOuterHeight) // test
+        // console.log(skillsOuterHeight) // test
         // make condition to show span progress
     if (windowScrolltop > (skillsOffsettop + skillsOuterHeight - windowHeight)) {
         this.console.log(`my all skills`) // if you go to the skills section show this message
