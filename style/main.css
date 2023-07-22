@@ -552,13 +552,20 @@ ul {
 
 .features {
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     background-color: #fff;
 }
 
+.features .allFeaturesBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 .features .allFeaturesBox .box {
-    width: calc(100% / 3);
-    float: left;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -578,7 +585,7 @@ ul {
     font-size: 22px;
     color: #000;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 0px;
     position: relative;
 }
 
@@ -599,4 +606,75 @@ ul {
     margin: 0 10px;
     color: #777;
     line-height: 1.5;
+    width: 400px;
+}
+
+
+/* stert testimonials */
+
+.feedBack {
+    max-height: 500px;
+    margin-top: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.feedBack::before {
+    position: absolute;
+    content: '';
+    position: absolute;
+    background-color: var(--secnond-bg);
+    width: 50%;
+    height: 100%;
+    left: 0px;
+    bottom: 0;
+    z-index: -1;
+}
+
+.feedBack::after {
+    position: absolute;
+    content: '';
+    position: absolute;
+    background-color: var(--text-main-color);
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    bottom: 0;
+    z-index: -1;
+}
+
+.feedBack .heading {
+    font-size: 33px;
+    margin-bottom: 20px;
+}
+
+.feedBack .alltestimonialsBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.feedBack .alltestimonialsBox .box {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.feedBack .alltestimonialsBox .box p {
+    line-height: 1.5;
+    color: #777;
+}
+
+.feedBack .alltestimonialsBox .box .content {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.feedBack .alltestimonialsBox .box .content .fa-user-tie {
+    background-color: var(--text-main-color);
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 20px;
 }
