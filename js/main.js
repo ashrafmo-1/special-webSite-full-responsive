@@ -124,3 +124,46 @@ window.onscroll = function() {
         });
     };
 }
+
+
+// crate popup in galary
+let allgalary = document.querySelectorAll(".allGalarySkills img");
+allgalary.forEach(img => {
+    // on click img add class overpopup
+    img.addEventListener("click", (ele) => {
+        // create overide ele
+        let over = document.createElement("div");
+        over.className = "popup-over"
+        document.body.appendChild(over)
+        let popupBox = document.createElement("div")
+        popupBox.className = "popupBox"
+            // add Alt text to popup
+        if (img.alt !== null) {
+            let infoImageAlt = document.createElement("h3")
+            let textAlt = document.createTextNode(img.alt)
+            infoImageAlt.style.textAlign = 'center'
+            infoImageAlt.appendChild(textAlt)
+            popupBox.appendChild(infoImageAlt)
+        }
+        // create image 
+        let popupImage = document.createElement("img")
+            // set image src in popup
+        popupImage.src = img.src
+        popupBox.appendChild(popupImage)
+        document.body.appendChild(popupBox)
+            // btn close popup
+        let btnClose = document.createElement("span")
+        let btnCloseTExt = document.createTextNode("X")
+        btnClose.appendChild(btnCloseTExt)
+        btnClose.className = "btnClose"
+        popupBox.appendChild(btnClose)
+    })
+})
+
+document.addEventListener('click', ele => {
+    if (ele.target.className === 'btnClose') {
+        // ele.target.parentNode.remove()
+        document.querySelector(".popup-over").remove()
+        document.querySelector(".popupBox").remove()
+    }
+})

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-:root {
+ :root {
     --paragreph-color: blue;
     --text-color: #02007a;
     --text-main-color: #0000ff;
@@ -333,6 +333,7 @@ ul {
     width: 150px;
     font-weight: var(--weigth-bold);
     color: var(--text-main-color);
+    transition: 0.4s;
 }
 
 .allBoxesSkills .box .prog {
@@ -341,6 +342,7 @@ ul {
     background: #f0f0f0;
     border-radius: 4px;
     position: relative;
+    transition: 0.4s;
 }
 
 .allBoxesSkills .box .prog span {
@@ -349,7 +351,7 @@ ul {
     height: 100%;
     background-color: var(--text-main-color);
     border-radius: 4px;
-    transition: all 0.4s;
+    transition: 0.4s;
 }
 
 .galary {
@@ -357,7 +359,7 @@ ul {
     padding-top: 20px;
 }
 
-.allGalarySkills {
+.allGalary {
     padding: 20px;
     display: flex;
     align-items: center;
@@ -365,17 +367,168 @@ ul {
     flex-wrap: wrap;
 }
 
-.allGalarySkills .box {
+.allGalary .box {
     margin: 2px 5px;
 }
 
-.allGalarySkills .box img {
+.allGalary .box img {
     height: 100px;
     border: 4px solid var(--text-main-color);
     transition: .5s;
 }
 
-.allGalarySkills .box img:hover {
+.allGalary .box img:hover {
     box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.75);
     cursor: pointer;
+}
+
+.popup-over {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: hsla(0, 0%, 0%, 0.807);
+    z-index: 1000;
+}
+
+.popupBox {
+    position: fixed;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid var(--text-main-color);
+    z-index: 1001;
+}
+
+.popupBox img {
+    max-width: 100%;
+}
+
+.btnClose {
+    position: absolute;
+    background-color: var(--text-main-color);
+    color: #eee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: var(--weigth-bold);
+    padding: 10px;
+    cursor: pointer;
+    top: -20px;
+    right: -20px;
+    transition: .5s;
+}
+
+.btnClose:hover {
+    background-color: #eee;
+    color: var(--text-main-color);
+}
+
+.timeline {
+    background-color: #eee;
+    margin-top: 20px;
+    padding-top: 20px;
+    height: 200vh;
+}
+
+.timeline .alltimesBox h2 {
+    margin: 20px 0;
+    color: var(--text-main-color);
+}
+
+.timeline .time {
+    position: relative;
+    background-color: var(--text-main-color);
+    width: fit-content;
+    margin: auto;
+    padding: 8px 20px;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+.timeline .time::after {
+    content: '';
+    position: absolute;
+    background-color: var(--text-main-color);
+    width: 2px;
+    height: 500px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.timeline .content {
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+
+.timeline .alltimesBox .left,
+.timeline .alltimesBox .right {
+    position: relative;
+    margin-bottom: 50px;
+    width: calc(50% - 25px);
+}
+
+.timeline .alltimesBox .left {
+    float: left;
+}
+
+.timeline .alltimesBox .left::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff;
+    width: 19px;
+    height: 19px;
+    right: -35px;
+    border: 1px solid var(--text-main-color);
+}
+
+.timeline .alltimesBox .left::after {
+    content: '';
+    position: absolute;
+    border-color: transparent transparent transparent rgb(255, 255, 255);
+    border-width: 15px;
+    border-style: solid;
+    width: 0px;
+    height: 0px;
+    right: -25px;
+    top: 6px;
+}
+
+.timeline .alltimesBox .right {
+    float: right;
+}
+
+.timeline .alltimesBox .right::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff;
+    width: 19px;
+    height: 19px;
+    left: -35px;
+    border: 1px solid var(--text-main-color);
+}
+
+.timeline .alltimesBox .right::after {
+    content: '';
+    position: absolute;
+    border-color: transparent rgb(255, 255, 255) transparent transparent;
+    border-width: 15px;
+    border-style: solid;
+    width: 0px;
+    height: 0px;
+    left: -25px;
+    top: 6px;
+}
+
+.clearFex {
+    clear: both;
 }
