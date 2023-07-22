@@ -127,7 +127,8 @@ window.onscroll = function() {
 
 
 // crate popup in galary
-let allgalary = document.querySelectorAll(".allGalarySkills img");
+let allgalary = document.querySelectorAll(".allGalary img");
+console.log(allgalary)
 allgalary.forEach(img => {
     // on click img add class overpopup
     img.addEventListener("click", (ele) => {
@@ -157,9 +158,9 @@ allgalary.forEach(img => {
         btnClose.appendChild(btnCloseTExt)
         btnClose.className = "btnClose"
         popupBox.appendChild(btnClose)
+
     })
 })
-
 document.addEventListener('click', ele => {
     if (ele.target.className === 'btnClose') {
         // ele.target.parentNode.remove()

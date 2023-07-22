@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
- :root {
+:root {
     --paragreph-color: blue;
     --text-color: #02007a;
     --text-main-color: #0000ff;
@@ -43,6 +43,10 @@ li {
 
 a {
     text-decoration: none;
+}
+
+.clearFex {
+    clear: both;
 }
 
 .container {
@@ -428,11 +432,14 @@ ul {
     color: var(--text-main-color);
 }
 
+
+/* time lime */
+
 .timeline {
     background-color: #eee;
     margin-top: 20px;
     padding-top: 20px;
-    height: 200vh;
+    padding-bottom: 20px;
 }
 
 .timeline .alltimesBox h2 {
@@ -450,28 +457,38 @@ ul {
     color: #ffffff;
 }
 
-.timeline .time::after {
+.timeline .alltimesBox {
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline .alltimesBox::after {
     content: '';
     position: absolute;
     background-color: var(--text-main-color);
     width: 2px;
-    height: 500px;
+    height: 100%;
     left: 50%;
+    top: 0;
     transform: translate(-50%);
+    z-index: 0;
 }
 
 .timeline .content {
-    margin-bottom: 20px;
+    margin-top: 20px;
     background: #ffffff;
     padding: 10px;
     border-radius: 6px;
-    margin-top: 30px;
+}
+
+.timeline .content p {
+    line-height: 1.3;
+    color: #777;
 }
 
 .timeline .alltimesBox .left,
 .timeline .alltimesBox .right {
     position: relative;
-    margin-bottom: 50px;
     width: calc(50% - 25px);
 }
 
@@ -487,10 +504,12 @@ ul {
     width: 19px;
     height: 19px;
     right: -35px;
+    top: 55px;
     border: 1px solid var(--text-main-color);
+    z-index: 1;
 }
 
-.timeline .alltimesBox .left::after {
+.timeline .alltimesBox .left .content::after {
     content: '';
     position: absolute;
     border-color: transparent transparent transparent rgb(255, 255, 255);
@@ -499,7 +518,7 @@ ul {
     width: 0px;
     height: 0px;
     right: -25px;
-    top: 6px;
+    top: 50px;
 }
 
 .timeline .alltimesBox .right {
@@ -514,10 +533,12 @@ ul {
     width: 19px;
     height: 19px;
     left: -35px;
+    top: 55px;
     border: 1px solid var(--text-main-color);
+    z-index: 1;
 }
 
-.timeline .alltimesBox .right::after {
+.timeline .alltimesBox .right .content::after {
     content: '';
     position: absolute;
     border-color: transparent rgb(255, 255, 255) transparent transparent;
@@ -526,9 +547,5 @@ ul {
     width: 0px;
     height: 0px;
     left: -25px;
-    top: 6px;
-}
-
-.clearFex {
-    clear: both;
+    top: 50px;
 }
