@@ -1,4 +1,4 @@
-@media(max-width: 767px) {
+@media(max-width: 800px) {
     .navgation ul {
         display: none;
     }
@@ -20,5 +20,72 @@
     }
     .navgation .toggle {
         display: block;
+    }
+    .landing h1 {
+        font-size: 23px;
+    }
+    .landing p {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 767px) {
+    .timeline .alltimesBox .left,
+    .timeline .alltimesBox .right {
+        width: 100%;
+        margin-bottom: 20px;
+        z-index: 99;
+        text-align: center;
+    }
+    .timeline .alltimesBox .left .content::after {
+        display: none;
+    }
+    .timeline .alltimesBox .right .content::after {
+        display: none;
+    }
+    .timeline .alltimesBox .left::before {
+        display: none;
+    }
+    .timeline .alltimesBox .right::before {
+        display: none;
+    }
+    .allBoxesSkills .box {
+        display: block;
+    }
+    .AboutUs .text-content h1 {
+        margin-bottom: 20px;
+    }
+    .AboutUs .content .image img {
+        width: 15rem;
+    }
+    .AboutUs .content {
+        text-align: center;
+        display: block;
+    }
+}
+
+@media(max-width: 992px) {
+    .contact form .left {
+        float: none;
+        width: 100%;
+    }
+    .contact form .right {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media(max-width: 400px) {
+    .landing p {
+        font-size: 11px;
+    }
+    .landing .content {
+        width: 70%;
+    }
+}
+
+@media(max-width: 320px) {
+    .AboutUs .content .image img {
+        width: 10rem;
     }
 }

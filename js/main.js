@@ -1,9 +1,12 @@
 // section setting
 let settingBox = document.querySelector(".settingBox")
-const settingBoxBtn = document.querySelector(".settingBox .icon").onclick = () => {
-        settingBox.classList.toggle("open")
-    }
-    // start cacger color lest
+let gearBtn = document.querySelector(".settingBox .icon")
+gearBtn.onclick = () => {
+    settingBox.classList.toggle("open")
+}
+
+
+// start cacger color lest
 let colorsChanger = document.querySelectorAll(".changeColor span");
 colorsChanger.forEach(span => {
         span.addEventListener("click", function(ele) {
@@ -11,12 +14,9 @@ colorsChanger.forEach(span => {
             document.documentElement.style.setProperty("--text-main-color", ele.target.dataset.color)
                 // set color to local storage
             localStorage.setItem("color_option", ele.target.dataset.color)
-                // remove Active class from al Element
-            ele.target.parentElement.querySelectorAll(".active").forEach(el => {
-                    el.classList.remove("active")
-                })
-                // add Active class From Target Element
-            ele.target.classList.add("active")
+
+            // function to handel Active class (remove, add (class .active))
+            activeFunction(ele)
         })
     })
     // get color from localStorage
@@ -40,12 +40,10 @@ if (myColors !== null) {
 let backGroundChanger = document.querySelectorAll(".select span");
 backGroundChanger.forEach(span => {
     span.addEventListener("click", function(ele) {
-        // remove Active class from al Element
-        ele.target.parentElement.querySelectorAll(".active").forEach(ele => {
-                ele.classList.remove("active")
-            })
-            // add Active class From Target Element
-        ele.target.classList.add("active");
+
+        // function to handel Active class (remove, add (class .active))
+        activeFunction(ele)
+
         // Stop or stay random
         if (ele.target.dataset.background === 'yes') {
             backgroundOption = true;
@@ -167,8 +165,40 @@ document.addEventListener('click', ele => {
     }
 });
 
+
+// navgation bar from small devices
 let hamburger = document.querySelector(".navgation .toggle");
 let nav = document.querySelector(".navgation ul");
 hamburger.onclick = () => {
     nav.classList.toggle("open");
+}
+
+
+
+// get all navBullets
+let bullets = document.querySelectorAll(".navBullets .bullet");
+let navgation = document.querySelectorAll(".links li a")
+
+
+// handel All function
+function allNavgationSiteScrolling(elements) {
+    elements.forEach((e) => {
+        e.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector(e.target.dataset.sections).scrollIntoView({ // Error in some browser (brave)
+                behavior: 'smooth'
+            });
+        });
+    });
+};
+
+allNavgationSiteScrolling(bullets);
+allNavgationSiteScrolling(navgation);
+
+// handle Active class
+function activeFunction(e) {
+    e.target.parentElement.querySelectorAll('.active').forEach(el => {
+        el.classList.remove('active')
+    })
+    e.target.classList.add('active')
 }

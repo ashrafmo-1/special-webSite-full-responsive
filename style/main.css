@@ -148,6 +148,7 @@ div .main-heading {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
+    width: 85%;
 }
 
 .landing h1 {
@@ -178,6 +179,8 @@ div .main-heading {
     z-index: 999;
     transition: 0.3s;
     left: -200px;
+    border: 1px solid;
+    border-color: #eee #eee #eee transparent;
     border-radius: 0px 5px 5px 0px;
 }
 
@@ -202,6 +205,8 @@ div .main-heading {
     padding: 10px;
     cursor: pointer;
     border-radius: 0px 5px 5px 0px;
+    border: 1px solid;
+    border-color: #eee #eee #eee transparent;
 }
 
 .landing .changeColor {
@@ -296,6 +301,63 @@ div .main-heading {
 }
 
 
+/* strt nav bulets */
+
+.navBullets {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    z-index: 999999;
+}
+
+.navBullets .bullet {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--text-main-color);
+    margin: 5px auto;
+    cursor: pointer;
+    position: relative;
+    background-color: #00000042;
+    border-radius: 10px;
+}
+
+.navBullets .bullet .bageGo {
+    right: 110px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    color: #fff;
+    background-color: var(--text-main-color);
+    padding: 5px 8px;
+    font-weight: var(--weigth-bold);
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+}
+
+.navBullets .bullet .bageGo::after {
+    content: '';
+    position: absolute;
+    border-color: transparent transparent transparent var(--text-main-color);
+    border-width: 15px;
+    border-style: solid;
+    width: 0px;
+    height: 0px;
+    right: -20px;
+    top: 0px;
+}
+
+.navBullets .bullet:hover .bageGo {
+    display: block;
+}
+
+
+/* end nav bulets */
+
+
 /* end Editing setting */
 
 
@@ -308,7 +370,6 @@ div .main-heading {
 
 .AboutUs .content {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .AboutUs .text-content {
@@ -359,7 +420,6 @@ div .main-heading {
     width: 150px;
     font-weight: var(--weigth-bold);
     color: var(--text-main-color);
-    transition: 0.4s;
 }
 
 .allBoxesSkills .box .prog {
@@ -368,7 +428,6 @@ div .main-heading {
     background: #f0f0f0;
     border-radius: 4px;
     position: relative;
-    transition: 0.4s;
 }
 
 .allBoxesSkills .box .prog span {
@@ -377,7 +436,7 @@ div .main-heading {
     height: 100%;
     background-color: var(--text-main-color);
     border-radius: 4px;
-    transition: 0.4s;
+    transition: all 0.4s;
 }
 
 .galary {
@@ -628,14 +687,13 @@ div .main-heading {
     margin: 0 10px;
     color: #777;
     line-height: 1.5;
-    width: 400px;
+    width: 95%;
 }
 
 
 /* stert testimonials */
 
 .feedBack {
-    max-height: 500px;
     margin-top: 20px;
     position: relative;
     padding: 20px;
@@ -645,7 +703,7 @@ div .main-heading {
     position: absolute;
     content: '';
     position: absolute;
-    background-color: var(--secnond-bg);
+    background-color: var(--text-main-color);
     width: 50%;
     height: 100%;
     left: 0px;
@@ -657,7 +715,7 @@ div .main-heading {
     position: absolute;
     content: '';
     position: absolute;
-    background-color: var(--text-main-color);
+    background-color: var(--secnond-bg);
     width: 50%;
     height: 100%;
     right: 0px;
@@ -704,20 +762,25 @@ div .main-heading {
     margin-right: 20px;
 }
 
+
+/* end feed back */
+
+
+/* start contact */
+
 .contact {
     margin-top: 40px;
     padding-top: 20px;
     background-image: linear-gradient(rgba(216, 216, 216, 0.767), rgba(216, 216, 216, 0.767), rgba(216, 216, 216, 0.767)), url(../image/bg-contact.jpg);
-    min-height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -99999;
+    padding-bottom: 20px;
 }
 
 .contact form {
     overflow: hidden;
-    min-width: 800px;
     margin: auto;
 }
 
@@ -761,8 +824,12 @@ textarea {
     margin-top: 9px;
 }
 
+
+/* end contact */
+
 footer {
     background-color: var(--text-main-color);
     text-align: center;
     padding: 10px 0;
+    font-size: 22px;
 }

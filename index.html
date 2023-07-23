@@ -18,22 +18,21 @@
 <body>
     <section class="landing" id="landing">
         <div class="navgation">
-
             <h3 class="brandName">special site</h3>
             <nav>
                 <ul class="links">
-                    <li><a class="active" href="#">home</a></li>
-                    <li><a href="#AboutUs">about us</a></li>
-                    <li><a href="#skills">our skills</a></li>
-                    <li><a href="#galary">product</a></li>
-                    <li><a href="#timeline">Achievements</a></li>
-                    <li><a href="#features">Features</a></li>
+                    <li><a class="active" href="#landing">home</li>
+            <li><a href="" data-sections="#AboutUs">about us</a></li>
+                    <li><a href="" data-sections="#skills">our skills</a></li>
+                    <li><a href="" data-sections="#galary">galary</a></li>
+                    <li><a href="" data-sections="#timeline">timeline</a></li>
+                    <li><a href="" data-sections="#features">features</a></li>
                 </ul>
                 <button class="toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
             </nav>
         </div>
         <div class="content">
@@ -66,6 +65,39 @@
                 </div>
             </section>
         </section>
+        <!-- strt nav bulets -->
+        <div class="navBullets">
+            <div class="bullet" data-sections="#landing">
+                <div class="bageGo">
+                    home
+                </div>
+            </div>
+            <div class="bullet" data-sections="#AboutUs">
+                <div class="bageGo">
+                    about us
+                </div>
+            </div>
+            <div class="bullet" data-sections="#skills">
+                <div class="bageGo">
+                    our skills
+                </div>
+            </div>
+            <div class="bullet" data-sections="#galary">
+                <div class="bageGo">
+                    galary
+                </div>
+            </div>
+            <div class="bullet" data-sections="#timeline">
+                <div class="bageGo">
+                    timeline
+                </div>
+            </div>
+            <div class="bullet" data-sections="#features">
+                <div class="bageGo">
+                    features
+                </div>
+            </div>
+        </div>
     </section>
     <section class="AboutUs" id="AboutUs">
         <div class="content">`
@@ -328,7 +360,7 @@
     <script src="./js/all.min.js"></script>
     <script src="./js/main.js"></script>
     <!-- <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="./js/ScrollReveal.js"></script> -->
+<script src="./js/ScrollReveal.js"></script> -->
 </body>
 
 </html>
