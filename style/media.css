@@ -1,0 +1,24 @@
+@media(max-width: 767px) {
+    .navgation ul {
+        display: none;
+    }
+    .navgation ul.open {
+        display: block;
+        width: 100%;
+        height: 300px;
+        background-color: #3a3a3a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+        border-radius: 0 0 25px 25px;
+    }
+    .navgation ul.open li {
+        text-align: center;
+        position: relative;
+        margin: 20px 0;
+    }
+    .navgation .toggle {
+        display: block;
+    }
+}

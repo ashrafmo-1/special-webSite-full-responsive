@@ -11,23 +11,29 @@
     <link rel="stylesheet" href="./style/all.min.css">
     <!-- main style sheet -->
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/media.css">
     <title>special site</title>
 </head>
 
 <body>
     <section class="landing" id="landing">
         <div class="navgation">
+
             <h3 class="brandName">special site</h3>
             <nav>
-                <ul>
+                <ul class="links">
                     <li><a class="active" href="#">home</a></li>
                     <li><a href="#AboutUs">about us</a></li>
                     <li><a href="#skills">our skills</a></li>
                     <li><a href="#galary">product</a></li>
                     <li><a href="#timeline">Achievements</a></li>
                     <li><a href="#features">Features</a></li>
-
                 </ul>
+                <button class="toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
         <div class="content">
@@ -37,7 +43,9 @@
         <section class="settingBox">
             <div class="setting">
                 <h3>edit site options</h3>
-                <i class="fa-solid fa-gear"></i>
+                <div class="icon">
+                    <i class="fa-solid fa-gear fa-spin"></i>
+                </div>
             </div>
             <div class="changeColor">
                 <p>color</p>
@@ -217,7 +225,6 @@
             </div>
         </div>
     </section>
-
     <section class="features" id="features">
         <div class="">
             <h2 class="main-heading">Our Features</h2>
@@ -257,7 +264,6 @@
             </div>
         </div>
     </section>
-
     <section class="feedBack" id="feedBack">
         <div class="container">
             <h1 class="heading">feedBack</h1>
@@ -295,11 +301,34 @@
             </div>
         </div>
     </section>
+    <section class="contact" id="contact">
+        <div class="">
+            <h2 class="main-heading">contact</h2>
+        </div>
+        <div class="container">
+            <form>
+                <div class="left">
+                    <input required placeholder="inter your name">
+                    <input required placeholder="inter your email">
+                    <input required placeholder="inter your password">
+                    <input required placeholder="inter your password again">
+                    <input required placeholder="inter your project">
+                </div>
+                <div class="right">
+                    <textarea required placeholder="type your message"></textarea>
+                    <button class="btn" type="submit">submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <h4>Made with love 💖👀</h4>
+    </footer>
     <!-- All scripting files -->
     <script src="./js/all.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="./js/ScrollReveal.js"></script>
+    <!-- <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/ScrollReveal.js"></script> -->
 </body>
 
 </html>

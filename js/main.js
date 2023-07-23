@@ -1,27 +1,25 @@
 // section setting
 let settingBox = document.querySelector(".settingBox")
-settingBox.onclick = function() {
-    this.classList.toggle("open")
-};
-
-// change color
+const settingBoxBtn = document.querySelector(".settingBox .icon").onclick = () => {
+        settingBox.classList.toggle("open")
+    }
+    // start cacger color lest
 let colorsChanger = document.querySelectorAll(".changeColor span");
 colorsChanger.forEach(span => {
-    span.addEventListener("click", function(ele) {
-        console.log(ele.target.dataset.color) // for testing only
-        document.documentElement.style.setProperty("--text-main-color", ele.target.dataset.color)
-            // set color to local storage
-        localStorage.setItem("color_option", ele.target.dataset.color)
-            // remove Active class from al Element
-        ele.target.parentElement.querySelectorAll(".active").forEach(el => {
-                el.classList.remove("active")
-            })
-            // add Active class From Target Element
-        ele.target.classList.add("active")
+        span.addEventListener("click", function(ele) {
+            console.log(ele.target.dataset.color) // for testing only
+            document.documentElement.style.setProperty("--text-main-color", ele.target.dataset.color)
+                // set color to local storage
+            localStorage.setItem("color_option", ele.target.dataset.color)
+                // remove Active class from al Element
+            ele.target.parentElement.querySelectorAll(".active").forEach(el => {
+                    el.classList.remove("active")
+                })
+                // add Active class From Target Element
+            ele.target.classList.add("active")
+        })
     })
-})
-
-// get color from localStorage
+    // get color from localStorage
 let myColors = localStorage.getItem("color_option");
 if (myColors !== null) {
     console.log("have color on local"); // To make sure that color
@@ -36,6 +34,7 @@ if (myColors !== null) {
         }
     })
 }
+// end cacger color lest
 
 // add ANd remove class Active from changer random Background
 let backGroundChanger = document.querySelectorAll(".select span");
@@ -71,7 +70,6 @@ if (backgroundlocalStorage !== null) {
     } else {
         backgroundOption = false
     }
-
     // remove Active class from all spans
     let allSpans = document.querySelectorAll(".select span")
     allSpans.forEach((ele) => {
@@ -84,8 +82,8 @@ if (backgroundlocalStorage !== null) {
         let yes = document.querySelector(".select .no")
         yes.classList.add("active")
     }
-
 }
+
 // change Bg After a custom time
 let landingBg = document.querySelector(".landing");
 let allImage = ["../image/1.jpg", "../image/2.jpg", "../image/4.jpg", "../image/5.jpg", "../image/6.jpg"];
@@ -167,4 +165,10 @@ document.addEventListener('click', ele => {
         document.querySelector(".popup-over").remove()
         document.querySelector(".popupBox").remove()
     }
-})
+});
+
+let hamburger = document.querySelector(".navgation .toggle");
+let nav = document.querySelector(".navgation ul");
+hamburger.onclick = () => {
+    nav.classList.toggle("open");
+}

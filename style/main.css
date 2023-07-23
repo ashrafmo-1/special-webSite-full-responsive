@@ -19,7 +19,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #eee;
+    background: var(--therd-bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -34,6 +34,7 @@ body {
     font-family: 'Cairo', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
 }
 
 ul,
@@ -85,11 +86,11 @@ div .main-heading {
 
 .navgation .brandName {
     font-size: 30px;
-    color: #eee;
+    color: var(--therd-bg);
     color: var(--text-main-color);
 }
 
-ul {
+.navgation ul {
     display: flex;
     gap: 1.5rem;
 }
@@ -97,7 +98,7 @@ ul {
 .navgation a {
     text-transform: capitalize;
     font-weight: var(--weigth-bold);
-    color: #eee;
+    color: var(--therd-bg);
     transition: 0.3s;
 }
 
@@ -109,11 +110,35 @@ ul {
     color: var(--text-main-color);
 }
 
+
+/*  navgation from mobile  */
+
+.toggle {
+    background: none;
+    border: none;
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.toggle span {
+    display: block;
+    background: var(--therd-bg);
+    margin-bottom: 5px;
+    height: 3px;
+}
+
+
+/* end navgation from mobile  */
+
 .landing {
     height: calc(100vh);
     width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.500)), url(../image/2.jpg);
-    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -99999;
 }
 
 .landing .content {
@@ -138,12 +163,9 @@ ul {
 .landing p {
     margin: auto;
     line-height: 1.6;
-    color: #eee;
+    color: var(--therd-bg);
     text-transform: capitalize;
 }
-
-
-/* end landing page */
 
 
 /* stert Editing setting */
@@ -159,8 +181,8 @@ ul {
     border-radius: 0px 5px 5px 0px;
 }
 
-.landing .open {
-    left: 0;
+.landing .settingBox.open {
+    left: 0px;
 }
 
 .landing .settingBox h3 {
@@ -171,7 +193,7 @@ ul {
     margin-bottom: 20px;
 }
 
-.landing .settingBox .fa-gear {
+.landing .settingBox .icon {
     position: absolute;
     right: -36px;
     bottom: 20px;
@@ -314,7 +336,7 @@ ul {
 }
 
 .skills {
-    background-color: #eee;
+    background-color: var(--therd-bg);
     margin-top: 30px;
     padding-top: 20px;
 }
@@ -413,7 +435,7 @@ ul {
 .btnClose {
     position: absolute;
     background-color: var(--text-main-color);
-    color: #eee;
+    color: var(--therd-bg);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -428,7 +450,7 @@ ul {
 }
 
 .btnClose:hover {
-    background-color: #eee;
+    background-color: var(--therd-bg);
     color: var(--text-main-color);
 }
 
@@ -436,7 +458,7 @@ ul {
 /* time lime */
 
 .timeline {
-    background-color: #eee;
+    background-color: var(--therd-bg);
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -573,7 +595,7 @@ ul {
 .features .allFeaturesBox .box :nth-child(1) {
     font-size: 20px;
     color: var(--text-main-color);
-    background-color: #eee;
+    background-color: var(--therd-bg);
     padding: 20px;
     border-radius: 50%;
     margin-bottom: 10px;
@@ -646,17 +668,20 @@ ul {
 .feedBack .heading {
     font-size: 33px;
     margin-bottom: 20px;
+    text-align: center;
+    color: white;
 }
 
 .feedBack .alltestimonialsBox {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .feedBack .alltestimonialsBox .box {
-    background-color: #eee;
+    background-color: var(--therd-bg);
     padding: 20px;
     border-radius: 10px;
 }
@@ -677,4 +702,67 @@ ul {
     padding: 10px;
     border-radius: 50%;
     margin-right: 20px;
+}
+
+.contact {
+    margin-top: 40px;
+    padding-top: 20px;
+    background-image: linear-gradient(rgba(216, 216, 216, 0.767), rgba(216, 216, 216, 0.767), rgba(216, 216, 216, 0.767)), url(../image/bg-contact.jpg);
+    min-height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -99999;
+}
+
+.contact form {
+    overflow: hidden;
+    min-width: 800px;
+    margin: auto;
+}
+
+.contact form input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 1px solid var(--text-main-color);
+    font-size: 16px;
+}
+
+.contact form input::placeholder,
+textarea::placeholder {
+    color: var(--text-main-color);
+}
+
+textarea {
+    resize: none;
+    height: 195px;
+}
+
+.contact form .left {
+    float: left;
+    width: 49%;
+}
+
+.contact form .right {
+    float: right;
+    width: 49%;
+}
+
+.contact form .right button {
+    width: 100%;
+    background: var(--text-main-color);
+    border: 2px solid var(--First-bg);
+    font-size: 20px;
+    padding: 5px 0;
+    margin-top: 9px;
+}
+
+footer {
+    background-color: var(--text-main-color);
+    text-align: center;
+    padding: 10px 0;
 }
