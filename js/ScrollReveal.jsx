@@ -6,7 +6,6 @@ const sr = ScrollReveal({
     // reset: true
 })
 sr.reveal(`.brandName`, { origin: 'left', interval: 100, delay: 100, distance: '10px' })
-sr.reveal(`nav`, { origin: 'right', interval: 100, delay: 100, distance: '10px' })
 sr.reveal(`.landing h1`)
 sr.reveal(`.landing .content p`, { origin: 'top', interval: 100, delay: 100, distance: '10px' })
 sr.reveal(`.AboutUs h1`)
