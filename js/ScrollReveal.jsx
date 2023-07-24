@@ -16,4 +16,4 @@ sr.reveal(`.galary .box`, { origin: 'bottom', interval: 100, delay: 200, distanc
 sr.reveal(`.timeline .left`,{ origin: 'left', interval: 100, delay: 100, distance: '10px' })
 sr.reveal(`.timeline .right`,{ origin: 'right', interval: 200, delay: 300, distance: '30px' })
 sr.reveal(`.features .box`, { origin: 'right', interval: 100, delay: 200, distance: '60px' })
-sr.reveal(`.container .box`,)
+sr.reveal(`.container .box`)
