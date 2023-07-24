@@ -202,3 +202,22 @@ function activeFunction(e) {
     })
     e.target.classList.add('active')
 }
+
+
+// change font family
+// let fonts = document.querySelectorAll(".changeFont .selectFont span")
+// let body = document.querySelector("body");
+
+
+let allFonts = document.querySelector("#font");
+let boxChange = document.querySelector("body")
+
+// edit on box only /* font family */
+allFonts.onclick = function() {
+        window.localStorage.setItem("fontchange", allFonts.value)
+        boxChange.style.fontFamily = allFonts.value
+    }
+    // add dato to localStorage
+boxChange.style.fontFamily = window.localStorage.getItem('fontchange')
+    // to pin select && never ralod changer
+allFonts.value = window.localStorage.getItem('fontchange')

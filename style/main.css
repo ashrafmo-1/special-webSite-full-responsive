@@ -198,15 +198,24 @@ div .main-heading {
 
 .landing .settingBox .icon {
     position: absolute;
-    right: -36px;
-    bottom: 20px;
+    right: -31px;
+    bottom: 100px;
     color: white;
     background-color: var(--text-main-color);
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     border-radius: 0px 5px 5px 0px;
     border: 1px solid;
     border-color: #eee #eee #eee transparent;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+}
+
+.landing .settingBox .icon :nth-child(1) {
+    right: 50%;
+    top: 29%;
+    transform: translateX(33%);
 }
 
 .landing .changeColor {
@@ -300,6 +309,39 @@ div .main-heading {
     opacity: 1;
 }
 
+.changeFont {
+    margin: 20px 10px;
+    background: #ffffff;
+    padding: 1rem 1.8rem;
+    border-radius: 5px;
+}
+
+.changeFont p {
+    color: var(--text-main-color);
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.changeFont select {
+    color: var(--text-main-color);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: .5px solid var(--text-main-color);
+    padding: 3px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.changeFont select option {
+    color: white;
+    background-color: var(--text-color);
+    font-size: 16px;
+    padding: 4px 0;
+}
+
 
 /* strt nav bulets */
 
@@ -352,6 +394,13 @@ div .main-heading {
 
 .navBullets .bullet:hover .bageGo {
     display: block;
+}
+
+.landing svg {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    color: rgb(236, 38, 38);
 }
 
 
