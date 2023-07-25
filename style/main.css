@@ -216,6 +216,7 @@ div .main-heading {
     right: 50%;
     top: 29%;
     transform: translateX(33%);
+    color: white;
 }
 
 .landing .changeColor {

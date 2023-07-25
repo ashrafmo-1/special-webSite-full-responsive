@@ -36,15 +36,27 @@ if (myColors !== null) {
 }
 // end cacger color lest
 
+// change Bg After a custom time
+
+let allImage = ["../image/1.jpg", "../image/2.jpg", "../image/4.jpg", "../image/5.jpg", "../image/6.jpg"];
+let backgroundOption = true;
+let backgroundInterval;
+
+function randomImages() {
+    if (backgroundOption === true) {
+        backgroundInterval = setInterval(() => {
+            let randomnum = Math.floor(Math.random() * allImage.length);
+            document.querySelector(".landing").style.backgroundImage = 'url("imgs/' + allImage[randomnum] + '")';
+        }, 1000);
+    };
+};
+
 // add ANd remove class Active from changer random Background
 let backGroundChanger = document.querySelectorAll(".select span");
 backGroundChanger.forEach(span => {
     span.addEventListener("click", function(ele) {
-
         // function to handel Active class (remove, add (class .active))
         activeFunction(ele)
-
-        // Stop or stay random
         if (ele.target.dataset.background === 'yes') {
             backgroundOption = true;
             randomImages()
@@ -56,12 +68,13 @@ backGroundChanger.forEach(span => {
         };
     });
 });
-let backgroundOption = true; // true => Boolian Value
-// constrol the interval (must catch to control it)
-let backgroundInterval;
+
+
 // remove Active class from al Element from localStorage
 let backgroundlocalStorage = localStorage.getItem("chacger-backGround");
 // chick random in localStorage is not Empty
+
+// random bg in local storamge
 if (backgroundlocalStorage !== null) {
     if (backgroundlocalStorage === 'true') {
         backgroundOption = true
@@ -73,6 +86,7 @@ if (backgroundlocalStorage !== null) {
     allSpans.forEach((ele) => {
         ele.classList.remove("active")
     })
+
     if (backgroundlocalStorage === 'true') {
         let yes = document.querySelector(".select .yes")
         yes.classList.add("active")
@@ -81,22 +95,8 @@ if (backgroundlocalStorage !== null) {
         yes.classList.add("active")
     }
 }
-
-// change Bg After a custom time
-let landingBg = document.querySelector(".landing");
-let allImage = ["../image/1.jpg", "../image/2.jpg", "../image/4.jpg", "../image/5.jpg", "../image/6.jpg"];
-// random background option
-function randomImages() {
-    if (backgroundOption === true) {
-        backgroundInterval = setInterval(() => {
-            // random length number
-            let randomnum = Math.floor(Math.random() * allImage.length);
-            // console.log(randomnum) // test
-            landingBg.style.backgroundImage = 'url("imgs/' + allImage[randomnum] + '")';
-        }, 1000);
-    };
-};
 randomImages();
+
 
 
 // get Skills
@@ -110,7 +110,6 @@ window.onscroll = function() {
     let skillsOuterHeight = mySkills.offsetHeight
     let windowHeight = window.innerHeight // get height The displayed page
     let windowScrolltop = window.scrollY // window scroll top (size page for scrolling)
-        // console.log(skillsOuterHeight) // test
         // make condition to show span progress
     if (windowScrolltop > (skillsOffsettop + skillsOuterHeight - windowHeight)) {
         this.console.log(`my all skills`) // if you go to the skills section show this message
@@ -119,7 +118,7 @@ window.onscroll = function() {
             skills.style.width = skills.dataset.prog;
         });
     };
-}
+};
 
 
 // crate popup in galary
@@ -154,9 +153,9 @@ allgalary.forEach(img => {
         btnClose.appendChild(btnCloseTExt)
         btnClose.className = "btnClose"
         popupBox.appendChild(btnClose)
-
     })
 })
+
 document.addEventListener('click', ele => {
     if (ele.target.className === 'btnClose') {
         // ele.target.parentNode.remove()
@@ -174,13 +173,28 @@ hamburger.onclick = () => {
 }
 
 
-
 // get all navBullets
 let bullets = document.querySelectorAll(".navBullets .bullet");
 let navgation = document.querySelectorAll(".links li a")
+allNavgationSiteScrolling(bullets);
+allNavgationSiteScrolling(navgation);
 
 
-// handel All function
+// edit font family
+let boxFonts = document.querySelector("#font");
+let body = document.querySelector("body")
+boxFonts.onclick = function() {
+        window.localStorage.setItem("fontchange", boxFonts.value)
+        body.style.fontFamily = boxFonts.value
+    }
+    // add data to localStorage
+body.style.fontFamily = window.localStorage.getItem('fontchange')
+    // to pin select && never ralod changer
+boxFonts.value = window.localStorage.getItem('fontchange')
+
+
+
+// handel All function from navgatoin and nav bullets
 function allNavgationSiteScrolling(elements) {
     elements.forEach((e) => {
         e.addEventListener('click', (e) => {
@@ -192,9 +206,6 @@ function allNavgationSiteScrolling(elements) {
     });
 };
 
-allNavgationSiteScrolling(bullets);
-allNavgationSiteScrolling(navgation);
-
 // handle Active class
 function activeFunction(e) {
     e.target.parentElement.querySelectorAll('.active').forEach(el => {
@@ -202,22 +213,3 @@ function activeFunction(e) {
     })
     e.target.classList.add('active')
 }
-
-
-// change font family
-// let fonts = document.querySelectorAll(".changeFont .selectFont span")
-// let body = document.querySelector("body");
-
-
-let allFonts = document.querySelector("#font");
-let boxChange = document.querySelector("body")
-
-// edit on box only /* font family */
-allFonts.onclick = function() {
-        window.localStorage.setItem("fontchange", allFonts.value)
-        boxChange.style.fontFamily = allFonts.value
-    }
-    // add dato to localStorage
-boxChange.style.fontFamily = window.localStorage.getItem('fontchange')
-    // to pin select && never ralod changer
-allFonts.value = window.localStorage.getItem('fontchange')
