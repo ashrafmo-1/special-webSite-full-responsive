@@ -72,8 +72,8 @@ backGroundChanger.forEach(span => {
 
 // remove Active class from al Element from localStorage
 let backgroundlocalStorage = localStorage.getItem("chacger-backGround");
-// chick random in localStorage is not Empty
 
+// chick random in localStorage is not Empty
 // random bg in local storamge
 if (backgroundlocalStorage !== null) {
     if (backgroundlocalStorage === 'true') {
@@ -172,7 +172,6 @@ hamburger.onclick = () => {
     nav.classList.toggle("open");
 }
 
-
 // get all navBullets
 let bullets = document.querySelectorAll(".navBullets .bullet");
 let navgation = document.querySelectorAll(".links li a")
@@ -198,7 +197,7 @@ boxFonts.value = window.localStorage.getItem('fontchange')
 function allNavgationSiteScrolling(elements) {
     elements.forEach((e) => {
         e.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // stop defult worker 
             document.querySelector(e.target.dataset.sections).scrollIntoView({ // Error in some browser (brave)
                 behavior: 'smooth'
             });
