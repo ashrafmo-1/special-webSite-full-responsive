@@ -1,3 +1,28 @@
+const backgroundimgchangerOnClick = document.querySelector('.landing')
+
+function background1() {
+    backgroundimgchangerOnClick.style.background = "url('./image/1.jpg') center center / cover";
+}
+
+function background2() {
+    backgroundimgchangerOnClick.style.background = "url('./image/2.jpg') center center / cover";
+}
+
+function background3() {
+    backgroundimgchangerOnClick.style.background = "url('./image/3.jpg') center center / cover";
+}
+
+function background4() {
+    backgroundimgchangerOnClick.style.background = "url('./image/4.jpg') center center / cover";
+}
+
+
+function background5() {
+    backgroundimgchangerOnClick.style.background = "url('./image/5.jpg') center center / cover";
+}
+
+
+
 // section setting
 let settingBox = document.querySelector(".settingBox")
 let gearBtn = document.querySelector(".settingBox .icon")
