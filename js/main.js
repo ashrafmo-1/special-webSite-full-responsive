@@ -99,22 +99,16 @@ randomImages();
 
 
 
-// get Skills
-let mySkills = document.querySelector(".skills");
-// start imnemation (on scroll We Well make function)
+// Skills animation
 window.onscroll = function() {
-    // skills offsetTop
+
+    let mySkills = document.querySelector(".skills");
     let skillsOffsettop = mySkills.offsetTop
 
-    // offsetHeight make to calculate MyELement + encluding (margin, padding, border)
-    let skillsOuterHeight = mySkills.offsetHeight
-    let windowHeight = window.innerHeight // get height The displayed page
-    let windowScrolltop = window.scrollY // window scroll top (size page for scrolling)
-        // make condition to show span progress
-    if (windowScrolltop > (skillsOffsettop + skillsOuterHeight - windowHeight)) {
-        this.console.log(`my all skills`) // if you go to the skills section show this message
-        let myAllSkills = document.querySelectorAll(".skills .allBoxesSkills .box span");
-        myAllSkills.forEach(skills => {
+    // make condition to show span progress
+    if (window.scrollY > (skillsOffsettop + mySkills.offsetHeight - window.innerHeight)) {
+
+        document.querySelectorAll(".skills .allBoxesSkills .box span").forEach(skills => {
             skills.style.width = skills.dataset.prog;
         });
     };

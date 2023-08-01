@@ -486,7 +486,7 @@ div .main-heading {
     height: 100%;
     background-color: var(--text-main-color);
     border-radius: 4px;
-    transition: all 0.4s;
+    transition: all 2s;
 }
 
 .galary {
