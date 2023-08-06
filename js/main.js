@@ -140,22 +140,22 @@ window.onscroll = function() {
 };
 
 
-// crate popup in galary
+// crate popup in galary (train document object modil)
 let allgalary = document.querySelectorAll(".allGalary img");
-console.log(allgalary)
 allgalary.forEach(img => {
     // on click img add class overpopup
-    img.addEventListener("click", (ele) => {
-        // create overide ele
-        let over = document.createElement("div");
-        over.className = "popup-over"
-        document.body.appendChild(over)
-        let popupBox = document.createElement("div")
+    img.addEventListener("click", (e) => {
+        // create background element overide for all page
+        let overBGC = document.createElement("section");
+        overBGC.className = "popup-over";
+        document.body.appendChild(overBGC);
+        // image popup box
+        let popupBox = document.createElement("section");
         popupBox.className = "popupBox"
             // add Alt text to popup
         if (img.alt !== null) {
             let infoImageAlt = document.createElement("h3")
-            let textAlt = document.createTextNode(img.alt)
+            let textAlt = document.createTextNode(`image number:-  ${img.alt}`)
             infoImageAlt.style.textAlign = 'center'
             infoImageAlt.appendChild(textAlt)
             popupBox.appendChild(infoImageAlt)
@@ -163,7 +163,7 @@ allgalary.forEach(img => {
         // create image 
         let popupImage = document.createElement("img")
             // set image src in popup
-        popupImage.src = img.src
+        popupImage.src = img.src;
         popupBox.appendChild(popupImage)
         document.body.appendChild(popupBox)
             // btn close popup
@@ -185,7 +185,7 @@ document.addEventListener('click', ele => {
 
 
 // navgation bar from small devices
-let hamburger = document.querySelector(".navgation .toggle");
+let hamburger = document.querySelector(".navgation .menu-icon");
 let nav = document.querySelector(".navgation ul");
 hamburger.onclick = () => {
     nav.classList.toggle("open");
